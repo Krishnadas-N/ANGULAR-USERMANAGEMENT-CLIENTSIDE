@@ -1,0 +1,102 @@
+<div class="login-page bg-light ">
+    <div class="container loaction">
+      <div class="row ">
+        <div class="col-lg-10 offset-lg-1 ">
+          <div class="bg-white shadow rounded ">
+            <div class="row ">
+              <div class="col-md-7 pe-0 ">
+                <div class="form-left h-100 py-5 px-5">
+                  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="row g-4">
+                    <div class="col-12">
+                      <label>First Name<span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                        <input type="text" class="form-control" formControlName="firstname" placeholder="Enter your first name.." required>
+                      </div>
+                      <div class="error-message" *ngIf="registrationForm.get('firstname')?.hasError('required') && registrationForm.get('firstname')?.touched">
+                        First Name is required
+                      </div>
+                    </div>
+  
+                    <div class="col-12">
+                      <label>Last Name<span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                        <input type="text" class="form-control" formControlName="lastname" placeholder="Enter your last name.." required>
+                      </div>
+                      <div class="error-message" *ngIf="registrationForm.get('lastname')?.hasError('required') && registrationForm.get('lastname')?.touched">
+                        Last Name is required
+                      </div>
+                    </div>
+  
+                    <div class="col-12">
+                      <label>Username<span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                        <input type="text" class="form-control" formControlName="username" placeholder="Enter your username.." required>
+                      </div>
+                      <div class="error-message" *ngIf="registrationForm.get('username')?.hasError('required') && registrationForm.get('username')?.touched">
+                        Username is required
+                      </div>
+                    </div>
+  
+                    <div class="col-12">
+                      <label>Email<span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <div class="input-group-text"><i class="bi bi-envelope-fill"></i></div>
+                        <input type="email" class="form-control" formControlName="email" placeholder="Enter your email.." required>
+                      </div>
+                      <div class="error-message" *ngIf="registrationForm.get('email')?.hasError('required') && registrationForm.get('email')?.touched">
+                        Email is required
+                      </div>
+                      <div class="error-message" *ngIf="registrationForm.get('email')?.hasError('email') && registrationForm.get('email')?.touched">
+                        Enter a valid email address
+                      </div>
+                    </div>
+  
+                    <div class="col-12">
+                      <label>Password<span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                        <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+                      </div>
+                      <div class="error-message" *ngIf="registrationForm.get('password')?.hasError('required') && registrationForm.get('password')?.touched">
+                        Password is required
+                      </div>
+                      <div class="error-message" *ngIf="registrationForm.get('password')?.hasError('pattern') && registrationForm.get('password')?.touched">
+                        Password must have at least 8 characters, including letters and numbers
+                      </div>
+                    </div>
+  
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary px-4 float-end mt-4" [disabled]="registrationForm.invalid">
+                        <span class="spinner-border spinner-border-sm" [style.display]="isLoading ? 'inline-block' : 'none'" role="status" aria-hidden="true"></span>
+                                              
+                        Register</button>
+                    </div>
+  
+                    <div class="col-12">
+                      <p class="text-center">Already have an account? <a routerLink="/login">Login here</a></p>
+                    </div>
+  
+                    <div *ngIf="registrationError" class="error">
+                      {{ registrationError }}
+                    </div> 
+                  </form>
+                </div>
+              </div>
+  
+              <!-- ... (existing HTML code for the right side) ... -->
+              <div class="col-md-5 ps-0 d-none d-md-block">
+                <div class="form-right h-100 bg-primary text-white text-center pt-5">
+                    <i class="bi bi-bootstrap"></i>
+                    <h2 class="fs-1">Welcome Back!!!</h2>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

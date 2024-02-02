@@ -1,0 +1,19 @@
+.table-container {
+    max-height: 1200px; /* Adjust the maximum height based on your needs */
+    overflow-y: scroll;
+   
+  }
+table tbody{
+    height: 200px;
+    overflow-y: auto;
+    width: 100%; 
+}
+.tboy{
+    overflow-y: scroll;
+   
+}
+
+.custom-dialog {
+    max-width: 600px; /* Adjust the width as needed */
+    width: 100%;
+  }

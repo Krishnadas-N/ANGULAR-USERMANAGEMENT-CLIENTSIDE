@@ -1,0 +1,8 @@
+<div class="wrap  mt-5">
+    <div class="search">
+       <input type="text" #search class="searchTerm" (keyup.enter)="onSearch(search.value)" placeholder="What are you looking for?">
+       <button type="button" (click)="onSearch(search.value)" class="searchButton">
+         <i class="fa fa-search"></i>
+      </button>
+    </div>
+ </div>

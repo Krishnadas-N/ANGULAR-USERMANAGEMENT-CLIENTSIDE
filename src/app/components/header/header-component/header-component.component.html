@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0 py-3">
+    <div class="container-xl">
+      <!-- Logo -->
+      <a class="navbar-brand" href="javascript:void(0)" [routerLink]="['/']">
+        <img src="https://preview.webpixels.io/web/img/logos/clever-light.svg" class="h-8" alt="...">
+      </a>
+      <!-- Include Angular Material icons in your template -->
+
+      <!-- Navbar toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+     </button>
+     
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <!-- Nav -->
+        <div class="navbar-nav mx-lg-auto">
+          <a class="nav-item nav-link active" href="javascript:void(0);" aria-current="page"></a>
+          <a class="nav-item nav-link" href="javascript:void(0);"></a>
+          <a class="nav-item nav-link" href="javascript:void(0);"></a>
+          <a class="nav-item nav-link" href="javascript:void(0);"></a>
+        </div>
+        <!-- Right navigation -->
+
+        <ng-container *ngIf="isLoading">
+          <app-loading-spinner></app-loading-spinner>
+        </ng-container>
+
+          <div class="navbar-nav ms-lg-4"*ngIf="isLoggedIn && !isLoading && isAdmin ">
+            <button mat-icon-button matTooltip="Users List" [routerLink]="['/users']" matTooltipPosition="below">
+                <mat-icon class="iconColor">group</mat-icon> </button>
+        </div>
+      
+          
+          <div class="navbar-nav ms-lg-4"*ngIf="isLoggedIn && !isLoading">
+            <button mat-icon-button matTooltip="Account"[routerLink]="['/profile']" matTooltipPosition="below">
+              <mat-icon class="iconColor" >account_circle</mat-icon>
+            </button>
+          </div>
+          <div class="navbar-nav ms-lg-4" *ngIf="isLoggedIn && !isLoading">
+            <button mat-icon-button matTooltip="Logout" (click)="logout()" matTooltipPosition="below">
+              <mat-icon class="iconColor">exit_to_app</mat-icon>
+            </button>
+            </div>
+            <div class="navbar-nav ms-lg-4" *ngIf="!isLoggedIn && !isLoading">
+
+            <a href="javascript:void(0);" class="nav-item nav-link" routerLink="/login">Sign in</a>
+          </div>
+          <!-- Action -->
+          <div class="d-flex align-items-lg-center mt-3 mt-lg-0" *ngIf="!isLoggedIn && !isLoading">
+            <a href="javascript:void(0);" class="btn btn-sm btn-primary w-full w-lg-auto" routerLink="/register" >
+              Register
+            </a>
+            
+          </div>
+      
+      </div>
+    </div>
+  </nav>

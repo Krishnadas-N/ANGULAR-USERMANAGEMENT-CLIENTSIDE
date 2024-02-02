@@ -1,0 +1,20 @@
+#holder{
+    min-height: 100%;
+    position:relative;
+}
+
+#body{
+    
+    margin: auto;  /* height of footer */
+    overflow-y: scroll;
+   
+}
+
+footer{
+    height: 60px; 
+    width:100%;
+    position: absolute;
+    left: 0;
+    bottom: 0; 
+    background-color: lightgray;
+}

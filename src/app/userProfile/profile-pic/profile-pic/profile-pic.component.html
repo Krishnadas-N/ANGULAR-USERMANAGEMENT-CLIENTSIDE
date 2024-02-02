@@ -1,0 +1,18 @@
+
+<div class="profile-pic" *ngIf="!loading">
+    <label class="-label" for="file">
+      <span class="glyphicon glyphicon-camera"></span>
+      <span>Change Image</span>
+    </label>
+    <input id="file" #image type="file" accept="image/*" (change)="upload($event)" />
+    <img [src]='src' alt="Profile-pic" id="output" width="200" />
+    
+  </div>
+
+  <div class="profile-pic"*ngIf="loading" >
+  <div  class="loading-spinner">
+    <!-- Add your loading spinner or message here -->
+    <div class="loader"></div>
+  </div>
+</div>
+  

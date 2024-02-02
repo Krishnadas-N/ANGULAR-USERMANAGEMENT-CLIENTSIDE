@@ -1,0 +1,71 @@
+<section>
+    <div class="student-profile py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card shadow-sm">
+                <div class="card-header bg-transparent text-center">
+
+
+                 <app-profile-pic [src]="userProfileImage"  [userId]="userId" >Loading...</app-profile-pic>
+
+
+                  <h3 *ngIf="userDetails.username;else loadingTemplate"> {{userDetails.username }}</h3>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0 text-center"  *ngIf="userDetails.isAdmin"><strong class="pr-1 text-primary">WELCOME ADMIN</strong></p>
+                    <br>
+                    <p class="mb-0"><strong class="pr-1 text-primary">Username:</strong> <span class="font-weight-bold"  *ngIf="userDetails?.username;else loadingTemplate">  {{userDetails.username}}</span></p>
+                    <br>
+                    <p class="mb-0"><strong class="pr-1 text-primary">Email:</strong> <span class="font-weight-bold"  *ngIf="userDetails?.email;else loadingTemplate">  {{userDetails.email}}</span></p>
+                  </div>
+                  
+              </div>
+            </div>
+            <div class="col-lg-8" >
+              <div class="card shadow-sm">
+                <div class="card-header bg-transparent border-0">
+                  <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+                </div>
+                <div class="card-body pt-0">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th width="30%">First Name</th>
+                      <td width="2%">:</td>
+                      <td *ngIf="userDetails?.firstName;else loadingTemplate" >{{userDetails.firstName}}</td>
+                    </tr>
+                    <tr>
+                        <th width="30%">Last Name</th>
+                        <td width="2%">:</td>
+                        <td *ngIf="userDetails?.lastname;else loadingTemplate" > {{userDetails.lastname}}</td>
+                      </tr>
+                    <tr>
+                      <th width="30%">Email	</th>
+                      <td width="2%">:</td>
+                      <td *ngIf="userDetails?.email;else loadingTemplate" >{{userDetails.email}}</td>
+                    </tr>
+
+                    
+                  </table>
+                </div>
+              </div>
+              <ng-template #loadingTemplate>
+                <!-- Loading spinner template -->
+                <div class="d-flex justify-content-center align-items-center" style="height: 100px;">
+                  <div class="spinner-border" role="status">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
+              </ng-template>
+              
+          
+            </div>
+            
+              
+            
+          </div>
+        </div>
+        
+      </div>
+      
+</section>

@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+html,body{
+    height: 100%
+}
+
+
+.custom-snackbar {
+    .mat-mdc-snack-bar-container .mdc-snackbar__surface {
+      border-radius: 8px !important;
+    }
+
+    .mat-mdc-button.mat-mdc-snack-bar-action {
+      color: white !important;
+    }
+  }
+
+  .snackbar-success {
+    .mdc-snackbar__surface {
+      background-color: black !important;
+      margin-top: 100px;
+    }
+  
+    .mdc-snackbar__label {
+      color: rgb(24, 197, 102) !important;
+    }
+  }
+
+
+  .snackbar-error {
+    .mdc-snackbar__surface {
+      background-color: red !important;
+      margin-top: 100px;
+    }
+  
+    .mdc-snackbar__label {
+      color: white !important;
+    }
+  }

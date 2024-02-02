@@ -1,0 +1,50 @@
+<table class="table table-container table-responsive table-hover table-striped mb-5">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Profile Picture</th>
+            <th>Full Name</th>
+            
+            <th>Username</th>
+            <th>Email</th>
+            <th colspan="2" class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="userData.users.length > 0 ; else noUsers" class="tboy">
+        <tr *ngFor="let user of userData.users; let i = index;" >
+          <td>
+            <a href="#"><i class="-alt fa fa-2x fa-eye fa-fw"></i></a>
+          </td>
+          <td>
+            <img [src]="user.profileImage" class="img-circle" width="60" alt="Profile Image">
+          </td>
+          <td>
+            <h4><b>{{ user.firstname | uppercase }} {{ user.lastname | uppercase }}</b></h4>
+            <p>amonvillaw</p>
+          </td>
+          <td>
+            <h4><b>{{ user.username }}</b></h4>
+            <a [href]="'mailto:' + user.email">{{ user.email }}</a>
+          </td>
+          <td>{{ user.email }}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-default" value="left" (click)="deleteUser(user._id)" type="button">
+                <i class="fa fa-fw s fa-remove"></i>Delete
+              </button>
+              <button class="btn btn-default" value="right" (click)="editUser(user)" type="button">
+                <i class="fa fa-fw fa-cog"></i>Edit
+              </button>
+            </div>
+          </td>
+        </tr>
+        
+      </tbody>
+      
+      <ng-template #noUsers>
+        <div class="alert alert-danger w-100 mt-2" role="alert">
+          <strong>No users found!</strong> Sorry, there are no users .
+        </div>
+      </ng-template> 
+</table>
+

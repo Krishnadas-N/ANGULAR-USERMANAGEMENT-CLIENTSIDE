@@ -1,0 +1,35 @@
+a {
+    text-decoration: none;
+}
+.login-page {
+    width: 100%;
+   height: auto;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+.form-right i {
+    font-size: 100px;
+}
+.error-message {
+    color: red;
+    font-size: 15px;
+    /* Add any other styles you want */
+  }
+
+  .error {
+    text-align: center;
+    color: #721c24; /* Red color for the error message text */
+    background-color: #f8d7da; /* Light red background color for the error message box */
+    border: 1px solid #f5c6cb; /* Border color for the error message box */
+    padding: 10px; /* Padding around the error message text */
+    margin-top: 10px; /* Margin at the top to separate from other elements */
+    border-radius: 4px; /* Rounded corners for a more polished look */
+  }
+
+  .loaction{
+    margin-top: 40px;
+    margin-bottom: 175px;
+
+  }
+  
