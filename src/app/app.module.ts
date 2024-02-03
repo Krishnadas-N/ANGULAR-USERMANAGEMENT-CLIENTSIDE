@@ -35,6 +35,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppEffects } from './STORE/GLOBAL STATE/App.effects';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -52,11 +53,13 @@ import { AppEffects } from './STORE/GLOBAL STATE/App.effects';
     UserTableComponent,
     UserRowComponent,
     CreateUserComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
    ProfileModule,

@@ -11,3 +11,9 @@
 .iconColor{
   color: white;
 }
+
+
+.active-icon .iconColor {
+  color:rgb(92, 142, 218);
+ 
+}

@@ -70,3 +70,6 @@ export const editUser=createAction(EDITUSER,props<{user:User}>());
 export const editUserSucess = createAction(EDITUSERSUCESS,props<{user:User}>())
 
 export const editUserFailure=createAction(EDITUSERFAILURE,props<{errorMessage:string}>())
+
+
+

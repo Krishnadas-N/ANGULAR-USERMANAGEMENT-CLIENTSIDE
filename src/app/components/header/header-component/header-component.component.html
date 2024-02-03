@@ -27,13 +27,13 @@
         </ng-container>
 
           <div class="navbar-nav ms-lg-4"*ngIf="isLoggedIn && !isLoading && isAdmin ">
-            <button mat-icon-button matTooltip="Users List" [routerLink]="['/users']" matTooltipPosition="below">
+            <button mat-icon-button matTooltip="Users List" [routerLink]="['/users']" [routerLinkActive]="['active-icon']" matTooltipPosition="below">
                 <mat-icon class="iconColor">group</mat-icon> </button>
         </div>
       
           
           <div class="navbar-nav ms-lg-4"*ngIf="isLoggedIn && !isLoading">
-            <button mat-icon-button matTooltip="Account"[routerLink]="['/profile']" matTooltipPosition="below">
+            <button mat-icon-button matTooltip="Account"[routerLink]="['/profile']" [routerLinkActive]="['active-icon']" matTooltipPosition="below">
               <mat-icon class="iconColor" >account_circle</mat-icon>
             </button>
           </div>

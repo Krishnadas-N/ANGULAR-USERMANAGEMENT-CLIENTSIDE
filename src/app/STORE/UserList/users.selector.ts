@@ -13,3 +13,4 @@ export const selectUser = createSelector(SelectUsersState,(state)=>{
 export const getIndividualUser=(userId:any)=>createSelector(SelectUsersState,(state)=>{
     return  state.users.find((user)=> user._id===userId);
 })
+
